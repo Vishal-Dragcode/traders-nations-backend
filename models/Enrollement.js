@@ -20,7 +20,7 @@ const enrollmentSchema = new mongoose.Schema({
   batchTiming:    { type: String, required: true },
   declaration:    { type: Boolean, required: true },
   status:         { type: String, default: 'pending' },
-  eventId:        { type: mongoose.Schema.Types.ObjectId, ref: 'Event', required: [true, 'Event ID is required for registration'] }, // Link to a specific event
+  eventId:        { type: mongoose.Schema.Types.ObjectId, ref: 'Event' }, // Link to a specific event (optional)
 }, { timestamps: true });
 
 module.exports = mongoose.model('Enrollment', enrollmentSchema);
